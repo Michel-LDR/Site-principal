@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+    <title>Meu Portfólio</title>
+    <link rel="icon" href="Images/favcon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css"/>
+   
+</head>
+<body>
+    <canvas id="particlesCanvas"></canvas>
+
+    <nav class="sidebar-nav">
+        <div class="nav-section">
+            <button class="nav-button active" data-section="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+                </svg>
+                <span class="tooltip">Início</span>
+            </button>
+
+            <button class="nav-button" data-section="about">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span class="tooltip">Sobre Mim</span>
+            </button>
+
+            <button class="nav-button" data-section="projects">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/>
+                </svg>
+                <span class="tooltip">Projetos</span>
+            </button>
+
+            <button class="nav-button" data-section="skills">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                <span class="tooltip">Skills</span>
+            </button>
+<div class="separator"></div>
+            <button class="nav-button" id="languageToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    <path d="M2 12h20"/>
+                </svg>
+                <span class="tooltip" id="languageTooltip">Português</span>
+            </button>
+        </div>
+
+<div class="separator"></div>       
+
+        <button class="nav-button" id="themeToggle">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2"/>
+                <path d="M12 20v2"/>
+                <path d="m4.93 4.93 1.41 1.41"/>
+                <path d="m17.66 17.66 1.41 1.41"/>
+                <path d="M2 12h2"/>
+                <path d="M20 12h2"/>
+                <path d="m6.34 17.66-1.41 1.41"/>
+                <path d="m19.07 4.93-1.41 1.41"/>
+            </svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: none;">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+            </svg>
+            <span class="tooltip">Trocar tema</span>
+        </button>
+    </nav>
+
+
+    <section id="home">
+        <div class="hero">
+            <h1 class="hero-name">Olá, sou <span class="highlight">Michel</span></h1>
+            <h2 class="hero-title">Desenvolvedor Web Full-Stack</h2>
+            <p class="hero-quote">"Às vezes, uma vírgula muda tudo."</p>
+        </div>
+    </section>
+
+  
+    <section id="about">
+        <div class="about-container">
+            <div class="section-title">
+                <h2>Sobre Mim</h2>
+                <p>Conheça um pouco mais sobre minha jornada</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                       <img src="Images/michel.jpg" alt="Michel">
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3>Com esforço e criatividade, podemos alcançar tudo</h3>
+                    <p>
+                        Sou um desenvolvedor Full-Stack dedicado a transformar suas ideias em realidade por meio de código. Com foco em criar interfaces intuitivas, responsivas e de qualidade, busco sempre entregar a melhor experiência para o usuário.
+                    </p>
+                    <p>
+                        Especialização em linguagens de código modernas com React, JavaScript e CSS, estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente.
+                    </p>
+                    <p>
+                        Acredito que cada código feito é uma oportunidade para melhorar e facilitar a vida de alguém.
+                    </p>
+                </div>
+            </div>
+      
+            <!-- LEMBRAR DE ATIVAR JS RELACIONADO!!!
+             (js: 24, 49, 112, 113.)
+             
+            <div class="about-stats">
+                  <div class="stat-card">
+                    <div class="stat-number">1+</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projetos Concluídos</div>
+                </div> 
+            </div>
+            -->
+
+        </div>
+    </section>
+
+ 
+    <section id="projects">
+        <div style="width: 100%;">
+            <div class="section-title">
+                <h2>Meus Projetos</h2>
+                <p>Alguns dos meus trabalhos</p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Projeto 1 -->
+                    <div class="project-card" data-link="https://michel-ldr.github.io/My-first-website">
+                        <div class="project-image">
+                            <p>&#128511;</p>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Primeiro Portfólio</h3>
+                            <p class="project-description">Meu primeiro projeto de portfólio utilizando somente HTML e CSS</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 -->
+                    <div class="project-card" data-link="#">
+                        <div class="project-image">
+                            <p>&#128511;</p>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-commerce Moderno</h3>
+                            <p class="project-description">Loja virtual responsiva com carrinho de compras e integração de pagamento</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="project-card" data-link="#">
+                        <div class="project-image">
+                            <p>&#128511;</p>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard Analytics</h3>
+                            <p class="project-description">Painel administrativo com gráficos e métricas em tempo real</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">API REST</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 4 -->
+                    <div class="project-card" data-link="#">
+                        <div class="project-image">
+                            <p>&#128511;</p>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">App de Tarefas</h3>
+                            <p class="project-description">Aplicativo mobile para gerenciamento de tarefas diárias com sincronização em nuvem</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Redux</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 5 -->
+                    <div class="project-card" data-link="#">
+                        <div class="project-image">
+                            <p>&#128511;</p>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Landing Page SaaS</h3>
+                            <p class="project-description">Página de vendas otimizada para conversão com animações modernas</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 6 -->
+                    <div class="project-card" data-link="#">
+                        <div class="project-image">
+                                 <p>&#128511;</p>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Blog Pessoal</h3>
+                            <p class="project-description">Blog com sistema de comentários e busca avançada de artigos</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">MDX</span>
+                                <span class="tech-tag">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn" id="nextBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="carousel-indicators" id="indicators"></div>
+        </div>
+    </section>
+
+  
+    <section id="skills">
+        <div style="width: 100%;">
+            <div class="section-title">
+                <h2>Skills & Tecnologias</h2>
+                <p>Ferramentas e tecnologias que domino</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                    </div>
+                    <div class="skill-name">HTML5</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                    </div>
+                    <div class="skill-name">CSS3</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    </div>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    </div>
+                    <div class="skill-name">React.js</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    </div>
+                    <div class="skill-name">Node.js</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
+                    </div>
+                    <div class="skill-name">Express.js</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                    </div>
+                    <div class="skill-name">Bootstrap</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                    </div>
+                    <div class="skill-name">PostgreSQL</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    </div>
+                    <div class="skill-name">Git</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                    </div>
+                    <div class="skill-name">GitHub</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery">
+                    </div>
+                    <div class="skill-name">jQuery</div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="NPM">
+                    </div>
+                    <div class="skill-name">NPM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/michel-ldr" target="_blank" class="footer-link">
+                    <span>💻</span> GitHub
+                </a>
+                <!-- <a href="https://linkedin.com" target="_blank" class="footer-link">
+                    <span>💼</span> LinkedIn -->
+                </a>
+                <a href="mailto:micheldengaten@gmail.com" class="footer-link">
+                    <span>📧</span> Email
+                </a>
+                <!-- <a href="https://twitter.com" target="_blank" class="footer-link">
+                    <span>🐦</span> Twitter -->
+                </a>
+            </div>
+            <div class="footer-text">
+                <p>© 2026 Michel - Desenvolvedor Frontend. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+<script src="index.js"></script>
+</body>
+</html>
