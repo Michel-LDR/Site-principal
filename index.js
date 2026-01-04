@@ -91,44 +91,44 @@
         });
 
         // Atualiza idioma
-function updateLanguage() {
-    const texts = translations[currentLanguage];
-    
-    // Hero
-    document.querySelector('.hero-name').innerHTML = `${texts.greeting} <span class="highlight">Michel</span>`;
-    document.querySelector('.hero-title').textContent = texts.title;
-    document.querySelector('.hero-quote').textContent = texts.quote;
-    
-    // About
-    document.querySelectorAll('.section-title h2')[0].textContent = texts.aboutTitle;
-    document.querySelectorAll('.section-title p')[0].textContent = texts.aboutSubtitle;
-    document.querySelector('.about-text h3').textContent = texts.aboutHeading;
-    const aboutParagraphs = document.querySelectorAll('.about-text p');
-    aboutParagraphs[0].textContent = texts.aboutText1;
-    aboutParagraphs[1].textContent = texts.aboutText2;
-    aboutParagraphs[2].textContent = texts.aboutText3;
-    
-    // Projects
-    document.querySelectorAll('.section-title h2')[1].textContent = texts.projectsTitle;
-    document.querySelectorAll('.section-title p')[1].textContent = texts.projectsSubtitle;
-    
-    // Skills
-    document.querySelectorAll('.section-title h2')[2].textContent = texts.skillsTitle;
-    document.querySelectorAll('.section-title p')[2].textContent = texts.skillsSubtitle;
-    
-    // Footer
-    document.querySelector('.footer-text p').textContent = texts.footerRights;
-    
-    // Tooltips da navegação - CORRIGIDO
-    document.querySelectorAll('.nav-button[data-section="home"] .tooltip')[0].textContent = texts.home;
-    document.querySelectorAll('.nav-button[data-section="about"] .tooltip')[0].textContent = texts.about;
-    document.querySelectorAll('.nav-button[data-section="projects"] .tooltip')[0].textContent = texts.projects;
-    document.querySelectorAll('.nav-button[data-section="skills"] .tooltip')[0].textContent = texts.skills;
-    
-    // Tooltip do idioma e tema
-    languageTooltip.textContent = texts.language;
-    document.querySelector('#themeToggle .tooltip').textContent = texts.theme;
-};
+        function updateLanguage() {
+            const texts = translations[currentLanguage];
+            
+            // Hero
+            document.querySelector('.hero-name').innerHTML = `${texts.greeting} <span class="highlight">Michel</span>`;
+            document.querySelector('.hero-title').textContent = texts.title;
+            document.querySelector('.hero-quote').textContent = texts.quote;
+            
+            // About
+            document.querySelectorAll('.section-title h2')[0].textContent = texts.aboutTitle;
+            document.querySelectorAll('.section-title p')[0].textContent = texts.aboutSubtitle;
+            document.querySelector('.about-text h3').textContent = texts.aboutHeading;
+            const aboutParagraphs = document.querySelectorAll('.about-text p');
+            aboutParagraphs[0].textContent = texts.aboutText1;
+            aboutParagraphs[1].textContent = texts.aboutText2;
+            aboutParagraphs[2].textContent = texts.aboutText3;
+            
+            // Projects
+            document.querySelectorAll('.section-title h2')[1].textContent = texts.projectsTitle;
+            document.querySelectorAll('.section-title p')[1].textContent = texts.projectsSubtitle;
+            
+            // Skills
+            document.querySelectorAll('.section-title h2')[2].textContent = texts.skillsTitle;
+            document.querySelectorAll('.section-title p')[2].textContent = texts.skillsSubtitle;
+            
+            // Footer
+            document.querySelector('.footer-text p').textContent = texts.footerRights;
+            
+            // Tooltips da navegação - CORRIGIDO
+            document.querySelectorAll('.nav-button[data-section="home"] .tooltip')[0].textContent = texts.home;
+            document.querySelectorAll('.nav-button[data-section="about"] .tooltip')[0].textContent = texts.about;
+            document.querySelectorAll('.nav-button[data-section="projects"] .tooltip')[0].textContent = texts.projects;
+            document.querySelectorAll('.nav-button[data-section="skills"] .tooltip')[0].textContent = texts.skills;
+            
+            // Tooltip do idioma e tema
+            languageTooltip.textContent = texts.language;
+            document.querySelector('#themeToggle .tooltip').textContent = texts.theme;
+        };
             
             navButtons.forEach(button => {
                 const section = button.dataset.section;
@@ -140,7 +140,6 @@ function updateLanguage() {
             
             languageTooltip.textContent = texts.language;
             document.querySelector('#themeToggle .tooltip').textContent = texts.theme;
-        }
 
         // Carrega idioma salvo
         const savedLanguage = localStorage.getItem('language');
