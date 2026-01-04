@@ -4,7 +4,7 @@ Portfolio profissional moderno e interativo desenvolvido com HTML, CSS e JavaScr
 
 ## Preview
 
-![Portfolio Preview](link-da-imagem-aqui)
+![Portfolio Preview](https://github.com/Michel-LDR/Site-principal/blob/main/Images/Screenshot.png)
 
 ## Características
 
