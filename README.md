@@ -1,92 +1,91 @@
-# Portfolio Profissional
+# Professional Portfolio
 
-Portfolio profissional moderno e interativo desenvolvido com HTML, CSS e JavaScript puro. Apresenta animações de partículas, tema dark/light, tradução PT/EN e design responsivo.
+A modern and interactive professional portfolio developed with pure HTML, CSS, and JavaScript. Features particle animations, a dark/light theme, Portuguese/English translation, and a responsive design.
 
 ## Preview
 
 ![Portfolio Preview](https://github.com/Michel-LDR/Site-principal/blob/main/Images/Screenshot.png)
 
-## Características
+## Features
 
-- **Dark/Light Mode** - Alternância suave entre temas
-- **Bilíngue** - Português e Inglês
-- **Animações de Partículas** - Efeito de fundo interativo
-- **Totalmente Responsivo** - Funciona em todos os dispositivos
-- **Navegação Lateral** - Interface intuitiva e moderna
-- **Performance Otimizada** - Carregamento rápido
+- **Dark/Light Mode** - Smooth theme switching
+- **Bilingual** - Portuguese and English
+- **Particle Animations** - Interactive background effect
+- **Fully Responsive** - Works on all devices
+- **Side Navigation** - Intuitive and modern interface
+- **Optimized Performance—Fast** - Fast loading
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **HTML5** - Estrutura semântica
-- **CSS3** - Animações e estilização moderna
-- **JavaScript (Vanilla)** - Interatividade e lógica
-- **Canvas API** - Sistema de partículas
-- **LocalStorage** - Salvamento de preferências
+- **HTML5** - Semantic structure
+- **CSS3** - Modern animations and styling
+- **JavaScript (Vanilla)** - Interactivity and logic
+- **Canvas API** - Particle system
+- **LocalStorage** - Saving preferences
 
-## Acesse o Projeto
+## Access the Project
 
-[Ver portfolio ao vivo](https://michel-ldr.github.io/Site-principal/)
+[View portfolio at vivo](https://michel-ldr.github.io/Site-principal/)
 
-## Estrutura do Projeto
+## Project Structure
 ```
 Site-principal/
-├── index.html          # Estrutura principal
-├── style.css           # Estilos e animações
-├── index.js            # Lógica e interatividade
-├── Images/             # Imagens do portfolio
-│   ├── michel.jpg
-│   └── favcon.ico
+├── index.html # Main structure
+├── style.css # Styles and animations
+├── index.js # Logic and interactivity
+├── Images/ # Portfolio images
+│ ├── michel.jpg
+│ └── favcon.ico
 └── README.md
 ```
 
-## Como Executar Localmente
+## How to Run Locally
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/Michel-LDR/Site-principal.git
 
-# Entre na pasta
+# Enter the folder
 cd Site-principal
 
-# Abra o index.html no navegador
-# Ou use um servidor local (recomendado):
-npx serve
-```
+# Open index.html in your browser
+# Or use a local server (recommended): npx serve
 
-## Funcionalidades
 
-### Sistema de Partículas
-- Animação de fundo com conexões dinâmicas
-- Interação com movimento do mouse
-- Otimizado para performance
+## Features
 
-### Navegação
-- Scroll suave entre seções
-- Indicador de seção ativa
-- Tooltips informativos
+### Particle System
+- Background animation with dynamic connections
+- Mouse movement interaction
+- Optimized for performance
 
-### Carrossel de Projetos
-- Auto-play com 10s de intervalo
-- Navegação manual com setas
-- Indicadores clicáveis
-- Responsivo (1, 2 ou 3 cards por view)
+### Navigation
+- Smooth scrolling between sections
+- Active section indicator
+- Informative tooltips
 
-### Tema & Idioma
-- Preferências salvas no LocalStorage
-- Transições suaves
-- Sincronização em todo o site
+### Project Carousel
+- Auto-play with 10s interval
+- Manual navigation with arrows
+- Clickable indicators
+- Responsive (1, 2 or 3 cards per view)
 
-## Próximas Melhorias
+### Theme & Language
+- Preferences saved in LocalStorage
+- Smooth transitions
+- Site-wide synchronization
 
-- Adicionar mais projetos reais
-- Implementar formulário de contato
-- Adicionar seção de blog
-- Integrar com CMS para facilitar atualizações
+## Upcoming Improvements
 
-## Contribuições
+- Add more real projects
+- Implement contact form
+- Add blog section
+- Integrate with CMS for easier updates
 
-Sugestões e melhorias são bem-vindas! Sinta-se à vontade para abrir uma issue ou pull request.
+## Contributions
 
-## Autor
+Suggestions and improvements are welcome! Feel free to open an issue or pull request.
+
+## Author
 
 **Michel R**
 
@@ -94,10 +93,10 @@ Sugestões e melhorias são bem-vindas! Sinta-se à vontade para abrir uma issue
 - Email: micheldengaten@gmail.com
 - Portfolio: [michel-ldr.github.io](https://michel-ldr.github.io/Site-principal/)
 
-## Licença
+## License
 
-Este projeto está sob a licença MIT.
+This project is under the MIT license.
 
 ---
 
-Se você gostou deste projeto, deixe uma estrela! Isso me motiva a continuar criando.
+If you liked this project, leave a star! It motivates me to continue creating.
