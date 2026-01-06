@@ -1,6 +1,7 @@
-    //DOM
-document.addEventListener('DOMContentLoaded', function() {
-    // Elementos
+// AGUARDA DOM ESTAR PRONTO
+window.addEventListener('DOMContentLoaded', function() {
+    
+    // ELEMENTOS DO DOM
     const themeToggle = document.getElementById('themeToggle');
     const languageToggle = document.getElementById('languageToggle');
     const languageTooltip = document.getElementById('languageTooltip');
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentLanguage = 'pt-br';
 
-    // Traduções
+    // TRADUÇÕES
     const translations = {
         'pt-br': {
             greeting: 'Olá, sou',
@@ -61,11 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Atualiza idioma
+    // FUNÇÃO PARA ATUALIZAR IDIOMA
     function updateLanguage() {
         const texts = translations[currentLanguage];
         
-        // Hero - com verificação
+        // Hero
         const heroName = document.querySelector('.hero-name');
         const heroTitle = document.querySelector('.hero-title');
         const heroQuote = document.querySelector('.hero-quote');
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const footerText = document.querySelector('.footer-text p');
         if (footerText) footerText.textContent = texts.footerRights;
         
-        // Tooltips da navegação
+        // Tooltips
         const homeTooltip = document.querySelector('.nav-button[data-section="home"] .tooltip');
         const aboutTooltip = document.querySelector('.nav-button[data-section="about"] .tooltip');
         const projectsTooltip = document.querySelector('.nav-button[data-section="projects"] .tooltip');
@@ -114,43 +115,40 @@ document.addEventListener('DOMContentLoaded', function() {
         if (themeTooltip) themeTooltip.textContent = texts.theme;
     }
 
-    // Carrega tema salvo ANTES de qualquer interação
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark');
-        if (iconSun) iconSun.style.display = 'none';
-        if (iconMoon) iconMoon.style.display = 'block';
-    } else {
-        body.classList.remove('dark');
-        if (iconSun) iconSun.style.display = 'block';
-        if (iconMoon) iconMoon.style.display = 'none';
+    // FUNÇÃO PARA APLICAR TEMA
+    function applyTheme(isDark) {
+        if (isDark) {
+            body.classList.add('dark');
+            if (iconSun) iconSun.style.display = 'none';
+            if (iconMoon) iconMoon.style.display = 'block';
+        } else {
+            body.classList.remove('dark');
+            if (iconSun) iconSun.style.display = 'block';
+            if (iconMoon) iconMoon.style.display = 'none';
+        }
     }
-
-    // Carrega idioma salvo ANTES de qualquer interação
+    
+    // Carrega e aplica o tema
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme === 'dark');
+    
+    // Carrega e aplica o idioma
     const savedLanguage = localStorage.getItem('language');
     if (savedLanguage && translations[savedLanguage]) {
         currentLanguage = savedLanguage;
     }
     updateLanguage();
 
-    // Toggle de tema
+    // EVENT LISTENERS - TEMA
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            
-            if (body.classList.contains('dark')) {
-                if (iconSun) iconSun.style.display = 'none';
-                if (iconMoon) iconMoon.style.display = 'block';
-            } else {
-                if (iconSun) iconSun.style.display = 'block';
-                if (iconMoon) iconMoon.style.display = 'none';
-            }
-            
-            localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+            const isDark = !body.classList.contains('dark');
+            applyTheme(isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
     }
 
-    // Toggle de idioma
+    // EVENT LISTENERS - IDIOMA
     if (languageToggle) {
         languageToggle.addEventListener('click', () => {
             currentLanguage = currentLanguage === 'pt-br' ? 'en' : 'pt-br';
@@ -159,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Navegação com scroll suave
+    // NAVEGAÇÃO
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
             navButtons.forEach(btn => btn.classList.remove('active'));
@@ -173,19 +171,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Atualiza botão ativo baseado no scroll
+    // Atualiza botão ativo no scroll
     const sections = document.querySelectorAll('section[id]');
-    
     window.addEventListener('scroll', () => {
         let current = '';
-        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             if (window.pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
-
         navButtons.forEach(button => {
             button.classList.remove('active');
             if (button.dataset.section === current) {
@@ -286,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoPlay();
     }
 
-    // SISTEMA DE PARTÍCULAS COM CONEXÕES
+    // SISTEMA DE PARTÍCULAS
     class ParticleNetwork {
         constructor() {
             this.canvas = document.getElementById('particlesCanvas');
@@ -370,10 +365,8 @@ document.addEventListener('DOMContentLoaded', function() {
         update() {
             this.particles.forEach(particle => {
                 particle.connections = 0;
-                
                 particle.x += particle.vx;
                 particle.y += particle.vy;
-                
                 if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
                 if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
             });
@@ -403,15 +396,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         animate() {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            
             this.update();
             this.particles.forEach(p => this.drawParticle(p));
             this.connect();
-            
             requestAnimationFrame(() => this.animate());
         }
     }
 
-    // Inicializar partículas
+    // Inicializa partículas
     new ParticleNetwork();
+    
 });
